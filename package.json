@@ -1,0 +1,32 @@
+{
+  "name": "babel-plugin-try-import",
+  "version": "1.0.0",
+  "description": "try import module",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "import",
+    "try import"
+  ],
+  "main": "./lib/index.js",
+  "author": "laincarl <1047972853@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf coverage lib",
+    "build": "babel src -d lib",
+    "build-examples": "babel example -d built-examples",
+    "lint": "eslint src test",
+    "prepare": "npm run clean && npm run build && npm run build-examples",
+    "test": "jest",
+    "test-coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "jest": "^24.0.0",
+    "rimraf": "^2.5.4"
+  }
+}
