@@ -1,7 +1,7 @@
-let a;
+let dd;
 
 try {
-  a = require('react').default;
+  dd = require('react').default;
 } catch (error) {}
 
 let m = () => {};

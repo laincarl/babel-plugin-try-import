@@ -1,11 +1,12 @@
-module.exports = function Plugin(babel, options = {}) {
-  const tryImport = options.tryImport || 'tryImport';
-  const hasModule = options.hasModule || 'hasModule';
+module.exports = function Plugin(babel) {
   const { types: t } = babel;
   return {
     name: 'try-import', // not required
     visitor: {
-      VariableDeclaration(path) {
+      VariableDeclaration(path, state) {
+        const options = state.opts
+        const tryImport = options.tryImport || 'tryImport';
+        const hasModule = options.hasModule || 'hasModule';
         const { node } = path;
         if (node.declarations[0] && node.declarations[0].init && node.declarations[0].init.callee) {
           const funcName = node.declarations[0].init.callee.name;

@@ -1,4 +1,4 @@
-let a = MyTryImport('react');
+let dd = MyTryImport('react');
 
 let m = MyTryImport('@react/types', () => { });
 
