@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-try-import",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "try import module",
   "keywords": [
     "babel",
@@ -11,12 +11,16 @@
   "main": "./lib/index.js",
   "author": "laincarl <1047972853@qq.com>",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "clean": "rimraf coverage lib",
     "build": "babel src -d lib",
     "build-examples": "babel example -d built-examples",
     "lint": "eslint src test",
     "prepare": "npm run clean && npm run build && npm run build-examples",
+    "prepublishOnly": "npm run clean && npm run build",
     "test": "jest",
     "test-coverage": "jest --coverage"
   },
