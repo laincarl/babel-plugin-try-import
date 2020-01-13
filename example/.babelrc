@@ -1,7 +1,11 @@
 {
   "plugins": [
     [
-      "../lib/index"
+      "../lib/index",
+      {
+        "tryImport": "MyTryImport",
+        "hasModule": "MyHasModule"
+      }
     ]
   ]
 }

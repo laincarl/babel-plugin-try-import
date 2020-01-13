@@ -1,5 +1,5 @@
-let a = tryImport('react');
+let a = MyTryImport('react');
 
-let m = tryImport('@react/types', () => { });
+let m = MyTryImport('@react/types', () => { });
 
-const hasReact = hasModule('react')
+const hasReact = MyHasModule('react')
