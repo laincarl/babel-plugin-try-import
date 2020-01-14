@@ -1,36 +1,52 @@
 # babel-plugin-try-import
+
 try import module in webpack
 
-#### what will this plugin do ?
+#### what does this plugin do
 
-convert 
-```
+convert
+
+```javascript
 let react = tryImport('react');
 ```
+
 into
 
-```
-let react;
-try {
-  react = require('react').default;
-} catch (error) {}
+```javascript
+let react = function () {
+  let temp;
 
+  try {
+    temp = require('react').default;
+  } catch (error) {}
+
+  return temp;
+}()
 ```
+
 so that webpack won't throw error while `react` is not exist
 
 convert
-```
+
+```javascript
 let hasReact = hasModule('react');
 ```
+
 into
 
-```
-let hasReact = false;
+```javascript
+let hasReact = function () {
+  let temp = false;
 
-try {
-  require.resolveWeak('react');
-  hasReact = true;
-} catch (error) {}
+  try {
+    require.resolveWeak('react');
+
+    temp = true;
+  } catch (error) {}
+
+  return temp;
+}()
 
 ```
+
 so that you can check if a module exists
