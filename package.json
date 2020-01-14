@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-try-import",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "try import module",
   "keywords": [
     "babel",
@@ -21,16 +21,24 @@
     "lint": "eslint src test",
     "prepare": "npm run clean && npm run build && npm run build-examples",
     "prepublishOnly": "npm run clean && npm run build",
-    "test": "jest",
-    "test-coverage": "jest --coverage"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/helper-plugin-test-runner": "^7.8.0",
+    "babel-jest": "^24.9.0",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.15.0",
-    "jest": "^24.0.0",
+    "jest": "^24.9.0",
     "rimraf": "^2.5.4"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "/test/fixtures/"
+    ],
+    "testEnvironment": "node",
+    "testRegex": "./test/.+\\.js$"
   }
 }

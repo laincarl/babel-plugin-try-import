@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    [
+      "../../../../lib",
+      {
+        "tryImport": "MyTryImport",
+        "hasModule": "MyHasModule"
+      }
+    ]
+  ]
+}
